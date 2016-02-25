@@ -70,10 +70,13 @@ function submitform(){
             if(data.status == 1){
                 alert("Successful call : " + data.message);
                 location.reload(true);
+                ga('send', 'event', 'form', 'submit', 'partners registration', 1);
             }else{
-               alert("Unsuccessful call : " + data.message + " \n Errors : "+data.errors); 
+               alert("Unsuccessful call : " + data.message + " \n Errors : "+data.errors);
+               ga('send', 'event', 'form', 'submit', 'partners registration', 0); 
             }
             enableScrolling();
+
 		  },
           error: function(XMLHttpRequest, textStatus, errorThrown) {
              loader.style.display = 'none';
