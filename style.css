@@ -24,7 +24,6 @@ $screen-lg-min: 1200px;
 body {
     background-image: url(./img/background.png);
     font-family: 'Proxima Nova', sans-serif;
-    margin:0px;
 }
 
 .logo {
