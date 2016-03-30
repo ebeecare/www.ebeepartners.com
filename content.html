@@ -19,6 +19,8 @@ function submitform(){
     var rid =  document.getElementById("rid").value;
     var postal = document.getElementById("postalCode").value;
     var referral_code = document.getElementById('referralcode').value;
+    var password = document.getElementById('password').value;
+    var confirmPassword = document.getElementById('confirmPassword').value;
     var messages = [];
   	if (type.trim() == "" ){
         messages.push("Please select a valid registering as.");
@@ -41,6 +43,12 @@ function submitform(){
     if (referral_code.trim() == "" ){
         messages.push("Invalid/Blank referral code");
     }
+    if (password.trim() == "" ){
+        messages.push("Invalid/Blank password");
+    }
+    if (confirmPassword.trim() != password.trim()){
+        messages.push("Passwords do not match");
+    }
     
     if (messages.length > 0 ){
         alert(messages.join('\n'));
@@ -54,7 +62,9 @@ function submitform(){
             "uid" : rid,
             "type" : type,
             "postalCode" : postal,
-            "promoCode" : referral_code
+            "promoCode" : referral_code,
+            "password": password.trim(),
+            "cpassword": confirmPassword.trim()
         }
         console.log("everything "+ JSON.stringify(jsonParams) );
         $.ajax({
@@ -127,6 +137,12 @@ function submitform(){
                 </div>
                 <div class="item">
                     <input class="input fill-width" type="email" name="email" id="email" placeholder="Enter Email*"></input>
+                </div>
+                <div class="item">
+                    <input class="input fill-width" type="password" name="password" id="password" placeholder="Enter Password*"></input>
+                </div>
+                <div class="item">
+                    <input class="input fill-width" type="password" name="confirmPassword" id="confirmPassword" placeholder="Confirm Password*"></input>
                 </div>
                	<div class="item">
                     <input class="input fill-width" type="number" name="mobilephone" id="mobilephone" placeholder="Enter Mobile Phone*"></input>
