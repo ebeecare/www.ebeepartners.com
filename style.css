@@ -28,6 +28,7 @@ body {
 
 a {
 	text-decoration: none;
+	color: #fff;
 }
 
 a:hover {
@@ -145,14 +146,17 @@ a:hover {
 }
 
 .action-container .content-header{
-	font-weight: bold;
+	font-weight: 600;
 	text-align: center;
-	font-size: 24px;
+	font-size: 25px;
+	color: #444;
 }
 
 .action-container .content-body{
 	text-align: center;
-	font-size: 22px;
+	color: #444;
+	font-size: 16px;
+	line-height: 2em;
 }
 
 .container {
@@ -329,12 +333,16 @@ a:hover {
 	    font-size: 22px;
 	}
 
+	.action-container {
+		flex: initial;
+	}
+
 	.action-container .content-header{
 		font-size: 22px;
 	}
 
 	.action-container .content-body{
-		font-size: 18px;
+		font-size: 14px;
 	}
 
 	.footer {
@@ -345,8 +353,11 @@ a:hover {
 		width: 100%;
 		flex:none;
 	}
+	.footer-item .footer-maps-button {
+		width: 150px;
+	}
 	.footer-item .footer-maps-button .Footer-maps-label     {
 		width:100%;
-		flex:none;
+		flex: initial;
 	}
 }
