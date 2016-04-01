@@ -26,15 +26,26 @@ body {
     font-family: 'Proxima Nova', sans-serif;
 }
 
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+.navigation {
+	background: #fff;
+}
+
 .logo {
-	padding:16px;
 }
 
 .banner {
 	width:100%;
 	position: relative;
   	overflow: hidden;
-  	 background-image: url("./img/banner_bg.png");
+  	 background-image: url("./img/banner_bg.jpg");
   	background-repeat: no-repeat;
 	background-size: cover;
   	background-clip: content-box;
@@ -43,9 +54,9 @@ body {
 }
 
 .banner-content-container{
-	background-color:rgba(0, 0, 0, 0.4);
+	background-color:rgba(0, 0, 0, 0.25);
 	/*position:absolute;*/
-	margin-top: 50px;
+	margin-top: 50px !important;
 	bottom:0;
 	margin: auto;
 	left: 0;
@@ -58,16 +69,16 @@ body {
 
 .banner-text-header{
 	color:white;
-	font-size: 48px;
+	font-size: 50px;
 	font-weight: bold;
-	text-shadow: black 0.1em 0.1em 0.2em
+	text-shadow: black 0.025em 0.025em 0.05em
 }
 
 .banner-text-body{
 	color:white;
 	font-size: 28px;
 	font-weight: lighter;
-	text-shadow: black 0.1em 0.1em 0.2em
+	text-shadow: black 0.025em 0.025em 0.05em
 }
 
 .banner-text-footer{
@@ -80,7 +91,6 @@ body {
 
 .special-text{
     color: #fdbc1d;
-    font-weight: bold;
 }
 
 .registration-form .header {
@@ -89,7 +99,6 @@ body {
     color: #FFF;
     text-align:center;
     padding:16px;
-    font-weight: bold;
     font-size: 28px;
    
 }
@@ -119,7 +128,6 @@ body {
 	cursor:pointer;
 	text-align:center;
     padding:16px;
-    font-weight: bold;
     font-size: 28px;
     border: none;
     display: block;
@@ -284,6 +292,14 @@ body {
 }
 
 @media all and (max-width: 450px) {
+	.logo {
+		height: 42px;
+	}
+
+	.banner-text-container{
+		padding-bottom:0px;
+	}
+
 	.banner-text-header{
 		font-size: 36px;
 	}
@@ -293,6 +309,7 @@ body {
 	}
 
 	.banner-text-footer{
+		position: relative;
 		font-size: 14px;
 	}
 
