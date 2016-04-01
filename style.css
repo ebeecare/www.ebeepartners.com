@@ -1,4 +1,4 @@
-/* @import "proxima-nova.css"; */
+@import "fonts/proxima-nova.css";
 /*
 variables 
 
@@ -121,6 +121,9 @@ body {
     padding:16px;
     font-weight: bold;
     font-size: 28px;
+    border: none;
+    display: block;
+    width: 100%;
 }
 
 .action-container {
