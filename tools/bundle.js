@@ -7,9 +7,9 @@ export default task(function bundle() {
     const bundler = webpack(webpackConfig);
     const run = (err, stats) => {
       if (err) {
-        console.error(err);
         reject(err);
       } else {
+        console.log(stats.toString(webpackConfig.stats));
         resolve();
       }
     };

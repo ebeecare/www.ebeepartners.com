@@ -4,16 +4,31 @@ const webpack = require('webpack');
 
 const NpmInstallPlugin = require('npm-install-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const CleanPlugin = require('clean-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 const TARGET = process.env.npm_lifecycle_event;
+const DEBUG = !process.argv.includes('release');
+const VERBOSE = process.argv.includes('verbose');
 
 const common = {
   entry: './entry.js',
   output: {
     path: path.join(__dirname, 'build'),
+    publicPath: '/',
     filename: 'bundle.js'
+  },
+  cache: false,
+  debug: DEBUG,
+  stats: {
+    colors: true,
+    reasons: DEBUG,
+    hash: VERBOSE,
+    version: VERBOSE,
+    timings: true,
+    chunks: VERBOSE,
+    chunkModules: VERBOSE,
+    cached: VERBOSE,
+    cachedAssets: VERBOSE,
   },
   module: {
     loaders: [
@@ -92,9 +107,6 @@ if (TARGET === 'build' || TARGET === 'deploy' || TARGET === 'stage') {
       ]
     },
     plugins: [
-      new CleanPlugin([path.join(__dirname, 'build')], {
-        verbose: false // Don't write logs to console
-      }),
       new ExtractTextPlugin('[name].[chunkhash].css'),
       new webpack.optimize.UglifyJsPlugin({
         compress: {
