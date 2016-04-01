@@ -80,7 +80,7 @@ if (TARGET === 'start' || !TARGET) {
   });
 }
 
-if (TARGET === 'build') {
+if (TARGET === 'build' || TARGET === 'deploy' || TARGET === 'stage') {
   module.exports = merge(common, {
     module: {
       loaders: [
