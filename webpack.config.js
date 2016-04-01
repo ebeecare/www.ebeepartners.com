@@ -7,8 +7,8 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 const TARGET = process.env.npm_lifecycle_event;
-const DEBUG = !process.argv.includes('release');
-const VERBOSE = process.argv.includes('verbose');
+const DEBUG = process.argv && !process.argv.includes('release') || true;
+const VERBOSE = process.argv && process.argv.includes('verbose') || true;
 
 const common = {
   entry: './entry.js',
@@ -64,8 +64,7 @@ if (TARGET === 'start' || !TARGET) {
       inline: true,
       progress: true,
 
-      // Display only errors to reduce the amount of output.
-      stats: 'errors-only',
+      stats: { colors: true },
 
       // Parse host and port from env so this is easy to customize.
       //
