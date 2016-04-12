@@ -24,22 +24,22 @@ function submitform(){
   var confirmPassword = document.getElementById('confirmPassword').value;
   var messages = [];
   if (type.trim() == "" ){
-    messages.push("Please select a valid registering as.");
+    messages.push("Please select what you are registering as.");
   }
   if (fullname.trim() == ""){
-    messages.push("Invalid/Blank name");
+    messages.push("Invalid/Blank full name");
   }
   if (rid.trim() == ""){
-    messages.push("Invalid/Blank registration id");
+    messages.push("Invalid/Blank registration number");
   }
   if (email.trim() == "" || email.indexOf("@") < 1 ){
     messages.push("Invalid/Blank email");
   }
   if (mobile.trim() == "" || mobile.toString().length != 8 ){
-    messages.push("Invalid/Blank mobile");
+    messages.push("Invalid/Blank mobile phone");
   }
   if (postal.trim() == ""){
-    messages.push("Invalid/Blank postal code");
+    messages.push("Invalid/Blank home postal code");
   }
   // if (referral_code.trim() == "" ){
   //   messages.push("Invalid/Blank referral code");
