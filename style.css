@@ -231,9 +231,9 @@ a:hover {
   color: #444;
 }
 
-.footer-item .footer-social-media {
+.footer-item .Footer-social-media {
     color: #fbeaaa;
-    margin-left: 10px;
+    margin-left: 5px;
     /*
     &:hover {
       color: #fff;
@@ -241,12 +241,8 @@ a:hover {
     */
 }
 
-.copyright{
-	position: absolute;
-	bottom: 0;
-	left:0;
-	margin-left:16px;
-	margin-bottom: 5px;
+.footer-item .Footer-social-media:hover {
+	text-decoration: none;
 }
 
 #loader-bg{
