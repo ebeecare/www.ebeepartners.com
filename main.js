@@ -83,10 +83,10 @@ function submitform(){
           if (res.body.status == 1) {
               alert("Successful call : " + res.body.message);
               location.reload(true);
-              ga('send', 'event', 'form', 'submit', 'partners registration', 1);
+              ga('send', 'event', 'account', 'registration', 'Nurse', 1);
           } else {
              alert("Unsuccessful call : " + res.body.message + " \n Errors : "+res.body.errors);
-             ga('send', 'event', 'form', 'submit', 'partners registration', 0); 
+             ga('send', 'event', 'account', 'registration', 'Nurse', 0); 
           }
           enableScrolling();
         }
