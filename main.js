@@ -46,6 +46,8 @@ function submitform(){
   // }
   if (password.trim() == "" ){
     messages.push("Invalid/Blank password");
+  } else if (password.trim().length < 8) {
+    messages.push("Password needs to be at least 8 characters long"); 
   }
   if (confirmPassword.trim() != password.trim()){
     messages.push("Passwords do not match");
