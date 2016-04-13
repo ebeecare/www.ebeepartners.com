@@ -246,9 +246,9 @@ a:hover {
 }
 
 #loader-bg{
-	display: table;
-	position:absolute;
-	background: rgba(0,0,0,0.5);
+	display: none;
+	position: fixed;
+	background: rgba(0,0,0,0.4);
 	top:0;
 	left:0;
 	z-index:1;
@@ -257,7 +257,11 @@ a:hover {
 }
 
 #loader{
-	display: table-cell; 
+	position: fixed;
+	height: 24px;
+	top: 50%;
+	margin-top: -12px;
+	width: 100%;
 	vertical-align: middle;
 	text-align:center;
 	font-family: 'Proxima Nova', sans-serif;
