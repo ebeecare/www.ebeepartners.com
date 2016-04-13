@@ -81,11 +81,11 @@ function submitform(){
           loader.style.display = 'none';
           // console.log(res);
           if (res.body.status == 1) {
-              alert("Successful call : " + res.body.message);
-              location.reload(true);
+              alert("Thank you for signing up as our healthcare professional!");
               ga('send', 'event', 'account', 'registration', 'Nurse', 1);
+              window.location = "https://app.ebeecare.com/";
           } else {
-             alert("Unsuccessful call : " + res.body.message + " \n Errors : "+res.body.errors);
+             alert("Oops, " + res.body.message + " \n Error(s): "+res.body.errors);
              ga('send', 'event', 'account', 'registration', 'Nurse', 0); 
           }
           enableScrolling();
