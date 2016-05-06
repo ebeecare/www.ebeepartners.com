@@ -26,7 +26,7 @@ function submitform(){
   if (type.trim() == "" ){
     messages.push("Please select what you are registering as.");
   }
-  if (fullname.trim() == ""){
+  if (fullname.trim() == "" && type.trim() != "Other"){
     messages.push("Invalid/Blank full name");
   }
   if (rid.trim() == ""){
@@ -47,12 +47,12 @@ function submitform(){
   if (password.trim() == "" ){
     messages.push("Invalid/Blank password");
   } else if (password.trim().length < 8) {
-    messages.push("Password needs to be at least 8 characters long"); 
+    messages.push("Password needs to be at least 8 characters long");
   }
   if (confirmPassword.trim() != password.trim()){
     messages.push("Passwords do not match");
   }
-  
+
   if (messages.length > 0 ){
     alert(messages.join('\n'));
   } else {
@@ -70,7 +70,7 @@ function submitform(){
       "cpassword": confirmPassword.trim()
     }
     var url = (window.location.hostname.indexOf('www.ebeepartners.com') > -1) ? 'https://api.ebeecare.com' : 'http://dev.ebeecare.com';
-    
+
     request
       .post(url + '/api/registerPartner')
       .send(jsonParams)
@@ -88,7 +88,7 @@ function submitform(){
               window.location = "https://app.ebeecare.com/";
           } else {
              alert("Oops, " + res.body.message + " \n Error(s): "+res.body.errors);
-             ga('send', 'event', 'account', 'registration', 'Nurse', 0); 
+             ga('send', 'event', 'account', 'registration', 'Nurse', 0);
           }
           enableScrolling();
         }
