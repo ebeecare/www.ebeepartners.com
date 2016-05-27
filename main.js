@@ -35,6 +35,14 @@ function submitform(){
   if (email.trim() == "" || email.indexOf("@") < 1 ){
     messages.push("Invalid/Blank email");
   }
+  if (password.trim() == "" ){
+    messages.push("Invalid/Blank password");
+  } else if (password.trim().length < 8) {
+    messages.push("Password needs to be at least 8 characters long");
+  }
+  if (confirmPassword.trim() != password.trim()){
+    messages.push("Passwords do not match");
+  }
   if (mobile.trim() == "" || mobile.toString().length != 8 ){
     messages.push("Invalid/Blank mobile phone");
   }
@@ -44,14 +52,6 @@ function submitform(){
   // if (referral_code.trim() == "" ){
   //   messages.push("Invalid/Blank referral code");
   // }
-  if (password.trim() == "" ){
-    messages.push("Invalid/Blank password");
-  } else if (password.trim().length < 8) {
-    messages.push("Password needs to be at least 8 characters long");
-  }
-  if (confirmPassword.trim() != password.trim()){
-    messages.push("Passwords do not match");
-  }
 
   if (messages.length > 0 ){
     alert(messages.join('\n'));
