@@ -29,9 +29,9 @@ function submitform(){
   if (fullname.trim() == "" && type.trim() != "Other"){
     messages.push("Invalid/Blank full name");
   }
-  if (rid.trim() == ""){
-    messages.push("Invalid/Blank registration number");
-  }
+  // if (rid.trim() == ""){
+  //   messages.push("Invalid/Blank registration number");
+  // }
   if (email.trim() == "" || email.indexOf("@") < 1 ){
     messages.push("Invalid/Blank email");
   }
